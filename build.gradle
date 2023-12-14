@@ -16,5 +16,8 @@ repositories {
 
 dependencies {
     implementation "org.projectlombok:lombok:$lombokVersion"
+    implementation "com.opencsv:opencsv:$openCsvVersion"
+
     annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "com.opencsv:opencsv:$openCsvVersion"
 }
