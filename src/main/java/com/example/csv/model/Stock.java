@@ -1,9 +1,10 @@
 package com.example.csv.model;
 
-import com.opencsv.bean.CsvBindByName;
-import com.opencsv.bean.CsvDate;
-import com.opencsv.bean.CsvNumber;
-import lombok.*;
+import com.opencsv.bean.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -21,7 +22,7 @@ public class Stock {
     private Integer quantity;
     @CsvBindByName(column = "Product", required = true)
     private String product;
-    @CsvBindByName(column = "Price", required = true)
+    @CsvBindByName(column = "Price", locale = "en-UK", required = true)
     @CsvNumber("###.##")
     private BigDecimal price;
     @CsvBindByName(column = "Currency", required = true)
