@@ -6,7 +6,8 @@ listed first.
 
 # Prerequisites
 
-Java 19 
+- Java 19 
+- Gradle
 
 # Example 
 
