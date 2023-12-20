@@ -1,5 +1,6 @@
 package com.example.csv.report;
 
+import com.example.csv.converter.ExchangeManager;
 import com.example.csv.model.ProductSummary;
 import com.example.csv.model.Stock;
 
@@ -9,9 +10,11 @@ import java.util.Map;
 
 public class ReportGenerator {
 
-    public static Map<String, ProductSummary> generateSummaryReport(List<Stock> allStocks) {
+    public static Map<String, ProductSummary> generateSummaryReport(List<Stock> allStocks, String currency) {
 
         Map<String, ProductSummary> summary = new HashMap<>();
+
+        ExchangeManager.convert(allStocks, currency);
 
         allStocks.forEach(s -> {
             if(summary.containsKey(s.getProduct())){

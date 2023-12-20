@@ -11,11 +11,15 @@ import java.math.BigDecimal;
 @Setter
 @ToString
 @Builder
-public class ProductSummary {
+public class ProductSummary implements Comparable<ProductSummary>{
 
     private String product;
     private Integer totalQuantity;
     private String currency;
     private BigDecimal value;
 
+    @Override
+    public int compareTo(ProductSummary o) {
+        return this.getValue().compareTo(o.getValue());
+    }
 }
